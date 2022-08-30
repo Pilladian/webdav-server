@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"net/http"
 	"os"
@@ -24,6 +25,9 @@ func initialize() {
 	if create_path_err := helper.CreatePath(STORAGE_PATH); create_path_err != nil {
 		logger.Error(create_path_err.Error())
 	}
+
+	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
+	CLIENT = &http.Client{}
 
 	// add authorized users
 	AUTH_USERS = make(map[string]string)

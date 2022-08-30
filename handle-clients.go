@@ -11,9 +11,6 @@ func handleRequests(w http.ResponseWriter, r *http.Request) {
 	username, password, ok := r.BasicAuth()
 
 	if ok {
-		if username != "" {
-			sendLogsToInfoWatch(INFOWATCH_PID, "yes", username, r.Method, r.URL.String())
-		}
 		logger.Info(fmt.Sprintf("user \"%s\" - method %s -  %s ", username, r.Method, r.RequestURI))
 		authorized, authentication_err := authenticate(username, password)
 		if authentication_err != nil {
@@ -21,6 +18,9 @@ func handleRequests(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if authorized {
+			if username != "" {
+				sendLogsToInfoWatch(INFOWATCH_PID, "yes", username, r.Method, r.URL.String())
+			}
 			w.Header().Set("Timeout", "99999999")
 			WEBDAV_SERVER.ServeHTTP(w, r)
 			return
