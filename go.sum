@@ -1,6 +1,14 @@
 github.com/Pilladian/go-helper v1.0.6 h1:yN7KxZB+QZ19i7wgyalJ+NCUlUiwYl9tV1JEMoYCwnY=
 github.com/Pilladian/go-helper v1.0.6/go.mod h1:8g+JATN4tlGQionLgOfpf55x7yn/LEGIef4vmIxrJOI=
+github.com/Pilladian/go-helper v1.0.14 h1:HUyneLXHXx3NqhT7zvaw/+48G2rZaury7QMdNoSNqRU=
+github.com/Pilladian/go-helper v1.0.14/go.mod h1:8g+JATN4tlGQionLgOfpf55x7yn/LEGIef4vmIxrJOI=
+github.com/Pilladian/go-helper v1.0.15 h1:gaiFkS4kqG0cbcHC1wmlrayAKbS6HE6fce+HOfaIasA=
+github.com/Pilladian/go-helper v1.0.15/go.mod h1:8g+JATN4tlGQionLgOfpf55x7yn/LEGIef4vmIxrJOI=
 github.com/Pilladian/logger v1.1.3 h1:u0t5YQ3Se+2Ljj0q98RbbspzU7DkXABRCIjtwninRcA=
 github.com/Pilladian/logger v1.1.3/go.mod h1:GL3fJ+25T2b7soW2eigo9fglr/UWdLZmAAfHbla4tgE=
+github.com/Pilladian/logger v1.1.5 h1:R1+J/TptlSZ4XdrqUydE/7yC6EPvueejpla8iUpTqJA=
+github.com/Pilladian/logger v1.1.5/go.mod h1:GL3fJ+25T2b7soW2eigo9fglr/UWdLZmAAfHbla4tgE=
 golang.org/x/net v0.0.0-20220812174116-3211cb980234 h1:RDqmgfe7SvlMWoqC3xwQ2blLO3fcWcxMa3eBLRdRW7E=
 golang.org/x/net v0.0.0-20220812174116-3211cb980234/go.mod h1:YDH+HFinaLZZlnHAfSS6ZXJJ9M9t4Dl22yv3iI2vPwk=
+golang.org/x/net v0.0.0-20220826154423-83b083e8dc8b h1:ZmngSVLe/wycRns9MKikG9OWIEjGcGAkacif7oYQaUY=
+golang.org/x/net v0.0.0-20220826154423-83b083e8dc8b/go.mod h1:YDH+HFinaLZZlnHAfSS6ZXJJ9M9t4Dl22yv3iI2vPwk=

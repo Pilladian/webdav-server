@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"net/http"
 	"os"
@@ -15,7 +16,7 @@ var STORAGE_PATH string = "./data"
 var SERVER_PORT int = 8080
 var WEBDAV_SERVER *webdav.Handler
 var AUTH_USERS map[string]string
-var CLIENT *http.Client = &http.Client{}
+var CLIENT *http.Client
 var INFOWATCH_PID = os.Getenv("INFOWATCH_PID")
 
 // initialize environment
@@ -28,6 +29,9 @@ func initialize() {
 	// add authorized users
 	AUTH_USERS = make(map[string]string)
 	AUTH_USERS[os.Getenv("USERNAME")] = os.Getenv("PASSWORD")
+
+	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
+	CLIENT = &http.Client{}
 }
 
 // entrypoint
