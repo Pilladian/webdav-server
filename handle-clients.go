@@ -11,7 +11,9 @@ func handleRequests(w http.ResponseWriter, r *http.Request) {
 	username, password, ok := r.BasicAuth()
 
 	if ok {
-		sendLogsToInfoWatch(INFOWATCH_PID, "yes", username, r.Method, r.URL.String())
+		if username != "" {
+			sendLogsToInfoWatch(INFOWATCH_PID, "yes", username, r.Method, r.URL.String())
+		}
 		logger.Info(fmt.Sprintf("user \"%s\" - method %s -  %s ", username, r.Method, r.RequestURI))
 		authorized, authentication_err := authenticate(username, password)
 		if authentication_err != nil {
