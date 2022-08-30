@@ -11,7 +11,7 @@ import (
 
 // GLOBAL VARS
 var STORAGE_PATH string = "./data"
-var SERVER_PORT int = 80
+var SERVER_PORT int = 8080
 var WEBDAV_SERVER *webdav.Handler
 var AUTH_USERS map[string]string
 
