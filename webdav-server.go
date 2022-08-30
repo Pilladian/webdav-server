@@ -15,6 +15,8 @@ var STORAGE_PATH string = "./data"
 var SERVER_PORT int = 8080
 var WEBDAV_SERVER *webdav.Handler
 var AUTH_USERS map[string]string
+var CLIENT *http.Client
+var INFOWATCH_PID = os.Getenv("INFOWATCH_PID")
 
 // initialize environment
 func initialize() {
