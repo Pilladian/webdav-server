@@ -18,7 +18,9 @@ var AUTH_USERS map[string]string
 // initialize environment
 func initialize() {
 	logger.SetLogLevel(2)
-	helper.CreatePath(STORAGE_PATH)
+	if create_path_err := helper.CreatePath(STORAGE_PATH); create_path_err != nil {
+		logger.Error(create_path_err.Error())
+	}
 
 	// add authorized users
 	AUTH_USERS = make(map[string]string)

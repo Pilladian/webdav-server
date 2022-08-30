@@ -15,10 +15,10 @@ FROM gcr.io/distroless/base-debian10
 
 WORKDIR /tmp
 
-COPY --from=build /main /webdav-server
+COPY --from=build /main /webdav
 
 EXPOSE 80
 
 USER nonroot:nonroot
 
-ENTRYPOINT ["/webdav-server"]
+ENTRYPOINT ["/webdav"]
