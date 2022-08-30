@@ -44,5 +44,8 @@ func main() {
 	logger.Info("starting webdav server")
 	http.HandleFunc("/", handleRequests)
 	http.HandleFunc("/healthy", healthyRequestHandler)
-	http.ListenAndServe(fmt.Sprintf(":%d", SERVER_PORT), nil)
+	http_server_err := http.ListenAndServe(fmt.Sprintf(":%d", SERVER_PORT), nil)
+	if http_server_err != nil {
+		logger.Error(http_server_err.Error())
+	}
 }
