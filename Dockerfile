@@ -15,6 +15,10 @@ FROM gcr.io/distroless/base-debian10
 
 WORKDIR /tmp
 
+ENV TZ="Europe/Berlin"
+ENV USERNAME="YOUR_USERNAME_GOES_HERE"
+ENV PASSWORD="YOUR_PASSWORD_GOES_HERE"
+
 COPY --from=build /main /webdav
 
 EXPOSE 80

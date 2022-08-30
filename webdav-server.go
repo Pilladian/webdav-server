@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/Pilladian/go-helper"
 	"github.com/Pilladian/logger"
@@ -24,7 +25,7 @@ func initialize() {
 
 	// add authorized users
 	AUTH_USERS = make(map[string]string)
-	AUTH_USERS["dav_user"] = "pass"
+	AUTH_USERS[os.Getenv("USERNAME")] = os.Getenv("PASSWORD")
 }
 
 // entrypoint
