@@ -1,15 +1,9 @@
 package main
 
 import (
-	"encoding/base64"
 	"errors"
 	"fmt"
 )
-
-func basicAuth(username, password string) string {
-	auth := username + ":" + password
-	return base64.StdEncoding.EncodeToString([]byte(auth))
-}
 
 func authenticate(u string, p string) (bool, error) {
 	if u == "" || p == "" {

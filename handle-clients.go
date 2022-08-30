@@ -30,3 +30,7 @@ func handleRequests(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(401)
 	w.Write([]byte("401 Unauthorized\n"))
 }
+
+func healthyRequestHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "running")
+}
