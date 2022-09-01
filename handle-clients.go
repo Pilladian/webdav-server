@@ -19,7 +19,7 @@ func handleRequests(w http.ResponseWriter, r *http.Request) {
 
 		if authorized {
 			if username != "" {
-				sendLogsToElastic(ELASTIC_SEARCH_PID, "yes", username, r.Method, r.URL.String())
+				sendLogsToElastic(ELASTIC_SEARCH_PID, "authorized", username, r.Method, r.URL.String())
 			}
 			w.Header().Set("Timeout", "99999999")
 			WEBDAV_SERVER.ServeHTTP(w, r)
@@ -28,7 +28,7 @@ func handleRequests(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if username != "" {
-		sendLogsToElastic(ELASTIC_SEARCH_PID, "no", username, r.Method, r.URL.String())
+		sendLogsToElastic(ELASTIC_SEARCH_PID, "unauthorized", username, r.Method, r.URL.String())
 	}
 	logger.Error(fmt.Sprintf("user \"%s\" tried accessing %s", username, r.URL.String()))
 	w.Header().Set("WWW-Authenticate", `Basic realm="BASIC WebDAV REALM"`)
