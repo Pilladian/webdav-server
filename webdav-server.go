@@ -18,6 +18,7 @@ var WEBDAV_SERVER *webdav.Handler
 var AUTH_USERS map[string]string
 var CLIENT *http.Client
 var INFOWATCH_PID = os.Getenv("INFOWATCH_PID")
+var ELASTIC_SEARCH_PID = os.Getenv("ELASTIC_SEARCH_PID")
 
 // initialize environment
 func initialize() {
