@@ -12,8 +12,8 @@ import (
 	"github.com/Pilladian/logger"
 )
 
-func sendLogsToElastic(pid string, authorized string, user string, method string, resource string) (int, error) {
-	request_body, request_body_err := json.Marshal(map[string]string{
+func sendLogsToElastic(pid string, authorized bool, user string, method string, resource string) (int, error) {
+	request_body, request_body_err := json.Marshal(map[string]interface{}{
 		"authorized": authorized,
 		"user":       user,
 		"method":     method,
